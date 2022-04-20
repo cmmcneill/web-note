@@ -1,13 +1,13 @@
 # Web Note
-A simple web browser notepad that saves notes to localStorage.
+A simple web browser notepad that saves notes to localStorage. Created as an exercise in React.
 
-Created as an excercise in React.
+Try it live at: https://cmmcneill.github.io/web-note/
 
-### Starting dev server
+## Starting dev server
 `npm run start`
 
-### Running tests
+## Running tests
 `npm run test`
 
-### Building for production
+## Building for production
 `npm run build`

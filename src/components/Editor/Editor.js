@@ -21,14 +21,19 @@ export default function Editor({ notes, onNoteDelete, onNoteChange, onNoteOpen }
         }
     ];
 
+    // Add note to the list of open notes in case this URL was loaded directly by the browser
     useEffect(() => {
-        // Add note to the list of open notes in case this URL was loaded directly by the browser
         onNoteOpen(noteId);
     }, [onNoteOpen, noteId]);
 
+    // If there's no title yet, force cursor into the title field
     useEffect(() => {
         autoFocusTitle();
     });
+
+    useEffect(() => {
+        document.title = 'Web Note - ' + note.title;
+    }, [note.title]);
 
     // Sometimes a deleted note is opened via browser back-button or bookmark
     if (!note) return <div className="editor"></div>;
