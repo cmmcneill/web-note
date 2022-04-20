@@ -1,0 +1,58 @@
+@import '../../scss/all';
+
+.editor {
+    flex-grow: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 1200px;
+    
+    @include breakpoint-xs {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .title-wrapper, .content {
+        background-color: $color-bg-medium;
+    }
+    
+    .title,
+    .content {
+        padding: 0.8rem 2rem;
+        outline: none;
+    }
+
+    .title-wrapper {
+        display: flex;
+        border-bottom: 1px dotted $color-text;
+        border-radius: $border-radius-small $border-radius-small 0 0;
+
+        .title {
+            flex-grow: 1;
+            color: $color-text;
+            font-size: $font-size-large;
+            border: none;
+            background-color: $color-bg-medium;
+            padding-right: 1rem;
+        }
+        
+        .menu-button {
+            padding: 0 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+
+            &:hover {
+                background-color: $color-bg-dark;
+            }
+        }
+    }
+
+    .content {
+        flex-grow: 1;
+        border-radius: 0 0 $border-radius-small $border-radius-small;
+    }
+}

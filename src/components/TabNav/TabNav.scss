@@ -1,0 +1,110 @@
+@import '../../scss/all';
+
+.tab-nav {
+    display: flex;
+    justify-content: flex-start;
+    background-color: $color-bg-dark;
+    max-width: 100%;
+    overflow-x: auto;
+
+    @include breakpoint-xs {
+        .app-name {
+            padding: 0 0.7em;
+        }
+
+        .new-tab {
+            display: none;
+        }
+
+        .tab {
+            flex-grow: 1;
+            border-right: none;
+
+            &:not(.active) {
+                display: none;
+            }
+
+            .title {
+                flex-grow: 1;
+                max-width: none;
+            }
+        }
+    }
+}
+
+.app-name, .tab, .new-tab {
+    display: flex;
+    align-items: center;
+    user-select: none;
+    padding: 0.6em 1.4em;
+}
+
+.app-name {
+    flex-shrink: 0;
+    color: $color-accent;
+    cursor: default;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    > div {
+        text-align: left;
+        margin-left: 0.1rem;
+        font-size: 1.25rem;
+        line-height: 0.75em;
+        letter-spacing: -0.05em;
+    }
+
+    .icon {
+        height: 1.9em;
+        position: relative;
+        top: 1px;
+    }
+}
+
+.tab, .new-tab {
+    background-color: $color-bg-medium;
+    cursor: pointer;
+    
+    &:hover {
+        background-color: $color-bg-light;
+    }
+}
+
+.tab {
+    display: inline-flex;
+    border-right: 2px solid $color-bg-dark;
+    border-bottom: 2px solid transparent;
+    border-top: 2px solid transparent;
+    min-width: 0;
+
+    &.active {
+        background-color: $color-bg-light;
+        border-bottom: 2px solid $color-accent;
+    }
+
+    .title {
+        max-width: 250px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;    
+    }
+
+    .icon {
+        margin-right: 0.5em;
+    }
+
+    .close {
+        margin-left: 1em;
+        flex-shrink: 0;
+
+        &:hover {
+            color: $color-accent;
+        }
+    }
+}
+
+.new-tab {
+    flex-shrink: 0;
+    font-size: $font-size-small;
+    padding: 0 1em;
+}
