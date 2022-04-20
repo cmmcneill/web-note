@@ -1,6 +1,7 @@
 import './TabNav.scss';
 import Tab from './Tab';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import logo from '../../images/logo.png';
 
 export default function TabNav({ notes, activeTab, onTabClose, onTabCreate, onTabChange }) {    
     const openTabs = notes.map((note) => {
@@ -18,7 +19,7 @@ export default function TabNav({ notes, activeTab, onTabClose, onTabCreate, onTa
     return (
         <div className="tab-nav">
             <div className="app-name">
-                <img className="icon" src="%PUBLIC_URL%/logo192.png" alt="Web Note Logo"/>
+                <img className="icon" src={logo} alt="Web Note Logo"/>
                 <div><div>Web</div><div>Note</div></div>
             </div>
             <Tab
