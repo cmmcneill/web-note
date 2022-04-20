@@ -18,7 +18,7 @@ export default function TabNav({ notes, activeTab, onTabClose, onTabCreate, onTa
     return (
         <div className="tab-nav">
             <div className="app-name">
-                <img className="icon" src="/logo192.png" alt="Web Note Logo"/>
+                <img className="icon" src="%PUBLIC_URL%/logo192.png" alt="Web Note Logo"/>
                 <div><div>Web</div><div>Note</div></div>
             </div>
             <Tab
